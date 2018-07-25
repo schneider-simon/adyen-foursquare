@@ -29,6 +29,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar src/client/styles/sass -o src/client/styles/css/ --include-path ./src --include-path ./node_modules",
-    "watch-css": "npm run build-css && node-sass-chokidar src/client/styles/sass/ -o src/client/styles/css/ --watch --recursive --include-path ./src --include-path ./node_modules"
+    "watch-css": "npm run build-css && node-sass-chokidar src/client/styles/sass/ -o src/client/styles/css/ --watch --recursive --include-path ./src --include-path ./node_modules",
+    "heroku-postbuild": "npm-run-all build-css build-js"
   }
 }
