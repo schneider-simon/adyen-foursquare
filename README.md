@@ -11,6 +11,7 @@ Web app to search for venues via the FourSquare API created for Adyen coding cha
 
 
 ### Open requirements
+* Use better error handling than simple alerts.
 * Pagination for venues list.
 * Proper validation for parameters.
 * Autocomplete location using Google geocoding.
@@ -34,3 +35,13 @@ Web app to search for venues via the FourSquare API created for Adyen coding cha
     # Watch changes and start development server with hot reload:
     yarn start
 ``` 
+
+## Live demo
+
+[https://warm-reef-22976.herokuapp.com/](https://warm-reef-22976.herokuapp.com/)
+
+## Screens
+
+![Screenshot list Amsterdam](doc/screens/screen1.png)
+
+![Screenshot list Sasbachwalden](doc/screens/screen2.png)
