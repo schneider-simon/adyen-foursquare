@@ -1,6 +1,8 @@
 # FiveCircle venue search
 
 Web app to search for venues via the FourSquare API created for Adyen coding challenge.
+Implemented using React, Bootstrap 4, NodeJs and ExpressJs (for application server that does not 
+reveal API secrets).
 
 ## Own Requirements
 
@@ -18,6 +20,13 @@ Web app to search for venues via the FourSquare API created for Adyen coding cha
 * Give user possibility to show results in Google maps.
 * Allow user to login to FourSquare account using oAuth.
 * Use slider for range and Select2 for sections with auto complete.
+
+## Request handling
+
+1. Browser client sends request to application server (express.js).
+2. Application server performs rudimentary validation and forwards request after adding API secrets.
+3. FourSquare server responds with data or error.
+4. Application server forwards data or error to client.
 
 ## Develop 
 
