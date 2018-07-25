@@ -1,0 +1,16 @@
+@import "~react-progress-button/react-progress-button.css";
+
+.progress-button.pb-container {
+  .pb-button {
+    border-radius: 0;
+    padding: 0;
+  }
+
+  &.loading .pb-button {
+    border-radius: 27px;
+  }
+
+  .pb-button span {
+    font-size: 1rem;
+  }
+}

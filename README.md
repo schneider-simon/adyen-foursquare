@@ -15,3 +15,7 @@ Created for Adyen coding challenge. Web app to search for venues via the FourSqu
 * Autocomplete location using Google geocoding.
 * Give user possibility to show results in Google maps.
 * Allow user to login to FourSquare account using oAuth.
+
+## Open requirements
+* Pagination for venues
+* 

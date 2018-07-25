@@ -6,6 +6,7 @@ import VenueList from "./components/venues/VenueList"
 import Footer from "./components/layout/Footer"
 import Content from "./components/layout/Content"
 import {requestVenuesFromApi} from "./services/apiService"
+import constants from "./constants"
 
 class App extends Component {
   constructor(props) {
@@ -16,8 +17,11 @@ class App extends Component {
         ll: null,
         near: "Amsterdam",
         query: "",
-        radius: null
-      }
+        radius: null,
+        section: ""
+      },
+      venuesResponse: null,
+      loadingState: constants.LOADING_STATES.NOTHING
     }
 
     this.onVenueSearchChange = this.onVenueSearchChange.bind(this)
@@ -29,18 +33,28 @@ class App extends Component {
   }
 
   onVenueSearchApply() {
+    this.setState({
+      loadingState: constants.LOADING_STATES.LOADING
+    })
+
     requestVenuesFromApi(this.state.venueSearchParameters)
-      .then(response => {
-        console.log("Got venues", response)
+      .then(venuesResponse => {
+        this.setState({venuesResponse, loadingState: constants.LOADING_STATES.SUCCESS})
       })
       .catch(error => {
         //TODO: Replace with better error handling
         alert(`Error: ${error.message}`)
         console.error(error)
+
+        this.setState({
+          loadingState: constants.LOADING_STATES.ERROR
+        })
       })
   }
 
   render() {
+    const venues = (this.state.venuesResponse) ? this.state.venuesResponse.venues : []
+
     return (
       <div className="app">
         <Header/>
@@ -49,8 +63,9 @@ class App extends Component {
             form={this.state.venueSearchParameters}
             onChange={this.onVenueSearchChange}
             onSubmit={this.onVenueSearchApply}
+            loadingState={this.state.loadingState}
           />
-          <VenueList/>
+          <VenueList venues={venues}/>
         </Content>
         <Footer/>
       </div>

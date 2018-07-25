@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="app-footer footer">
       <div className="container">
-        <span className="text-muted">Place sticky footer content here.</span>
+        <span className="text-muted">FourSquare search app for Adyen coding challenge</span>
       </div>
     </footer>
   );
