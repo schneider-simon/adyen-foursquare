@@ -1,21 +1,36 @@
 # FiveCircle venue search
 
-Created for Adyen coding challenge. Web app to search for venues via the FourSquare API.
+Web app to search for venues via the FourSquare API created for Adyen coding challenge.
 
 ## Own Requirements
 
 * Search query for venues based on names
 * Free text location filter to get results near a certain location
-* Radius slider to limit results
+* Secondary inputs to limit radius of results and section of venues 
 * Show venues in list view
 
 
-### Optional requirements
-
+### Open requirements
+* Pagination for venues list.
+* Proper validation for parameters.
 * Autocomplete location using Google geocoding.
 * Give user possibility to show results in Google maps.
 * Allow user to login to FourSquare account using oAuth.
+* Use slider for range and Select2 for sections with auto complete.
 
-## Open requirements
-* Pagination for venues
-* 
+## Develop 
+
+```bash
+    # Install all requirements:
+    yarn
+    
+    # Set private FourSquare API auth parameters
+    export FOURSQUARE_CLIENT_ID="YOUR_CLIENT_ID"
+    export FOURSQUARE_CLIENT_SECRET="YOUR_CLIENT_SECRET"
+    
+    # Start API:
+    node src/server/server.js
+    
+    # Watch changes and start development server with hot reload:
+    yarn start
+``` 
