@@ -4,16 +4,17 @@ import Header from "./components/layout/Header"
 import VenueSearchForm from "./components/venues/VenueSearchForm"
 import VenueList from "./components/venues/VenueList"
 import Footer from "./components/layout/Footer"
+import Content from "./components/layout/Content"
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <Header/>
-        <div className="container">
+        <Content>
           <VenueSearchForm/>
           <VenueList/>
-        </div>
+        </Content>
         <Footer/>
       </div>
     );

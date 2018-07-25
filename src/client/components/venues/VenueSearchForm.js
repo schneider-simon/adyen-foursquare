@@ -1,11 +1,21 @@
 import React from 'react';
+import {Col, Form, Input, Label, Row} from "reactstrap"
 
 class VenueSearchForm extends React.Component {
   render() {
     return (
-      <div>
-
-      </div>
+      <Form>
+        <Row>
+          <Col md="6">
+            <Label>What</Label>
+            <Input/>
+          </Col>
+          <Col md="6">
+            <Label>Where</Label>
+            <Input/>
+          </Col>
+        </Row>
+      </Form>
     );
   }
 }

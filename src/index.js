@@ -1,1 +1,1 @@
-require("./client/index")
+require("./client/client")

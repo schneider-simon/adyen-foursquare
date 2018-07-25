@@ -1,8 +1,10 @@
 import React from 'react';
 
-const VenueList = ({}) => {
+const VenueList = () => {
   return (
-    <div></div>
+    <div>
+      VenueList
+    </div>
   );
 };
 

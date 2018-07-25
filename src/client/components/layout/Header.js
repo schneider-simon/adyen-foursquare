@@ -1,12 +1,15 @@
 import React from 'react';
+import {Navbar, NavbarBrand} from "reactstrap"
 
-const Header = ({}) => {
+const Header = () => {
   return (
-    <div>
+    <header className="app-header">
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">FiveCircle</NavbarBrand>
+        <div className="container">
+          <NavbarBrand href="/">FiveCircle</NavbarBrand>
+        </div>
       </Navbar>
-    </div>
+    </header>
   );
 };
 
