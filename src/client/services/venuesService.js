@@ -1,6 +1,12 @@
 import Venue from "../models/Venue"
 
-export const getVenuesFromApiResponse = (response) => {
+/**
+ * Maps the API response to a list of Venues.
+ *
+ * @param response
+ * @returns {Venue[]}
+ */
+export const mapVenuesFromApiResponse = (response) => {
   const allItems = response.groups.reduce((items, group) => {
     return items.concat(group.items)
   }, [])
@@ -18,6 +24,11 @@ export const getVenuesFromApiResponse = (response) => {
   })
 }
 
+/**
+ * Get the largest icon from the API response.
+ * @param categories
+ * @returns {*}
+ */
 export const getIconFromApiResponseCategories = (categories) => {
   if (!categories || categories.length === 0) {
     return null

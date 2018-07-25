@@ -1,6 +1,13 @@
 import {encodeUrlParameters} from "../helpers/urlHelpers"
-import {getVenuesFromApiResponse} from "./venuesService"
+import {mapVenuesFromApiResponse} from "./venuesService"
 
+/**
+ * Fetch a json from the application server API.
+ *
+ * @param endpoint
+ * @param parameters
+ * @returns {Promise<any>}
+ */
 export const requestApi = (endpoint, parameters = {}) => {
   let uri = `/api/${endpoint}`
 
@@ -25,6 +32,12 @@ export const requestApi = (endpoint, parameters = {}) => {
     })
 }
 
+/**
+ * Filter parameters that do not contain any values.
+ *
+ * @param parameters
+ * @returns {{}}
+ */
 const filterEmptyParameters = (parameters) => {
   return Object.keys(parameters).reduce((filteredParameters, key) => {
     const value = parameters[key]
@@ -38,11 +51,17 @@ const filterEmptyParameters = (parameters) => {
   }, {})
 }
 
+/**
+ * Request the venues from the application server API.
+ *
+ * @param parameters
+ * @returns {Promise<{venues: *, bounds: *}>}
+ */
 export const requestVenuesFromApi = (parameters = {}) => {
   return requestApi("get-venues", filterEmptyParameters(parameters))
     .then(response => {
       return {
-        venues: getVenuesFromApiResponse(response.response),
+        venues: mapVenuesFromApiResponse(response.response),
         bounds: response.response.suggestedBounds
       }
     })
